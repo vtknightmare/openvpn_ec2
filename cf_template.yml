@@ -151,7 +151,7 @@ Resources:
           apt-get update
           apt-get install -y python3-pip awscli
           pip3 install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-py3-latest.tar.gz
-          git clone https://github.com/romankurnovskii/openvpn_ec2_cf_template.git /home/ubuntu/openvpn_ec2_cf
+          git clone https://github.com/vtknightmare/openvpn_ec2/openvpn_ec2_cf_template.git /home/ubuntu/openvpn_ec2_cf
           cd /home/ubuntu/openvpn_ec2_cf
           ./setup_ec2.sh ${S3Bucket} ${IPAddress}
           /usr/local/bin/cfn-signal --stack ${AWS::StackName} --resource EC2Instance --region ${AWS::Region}
