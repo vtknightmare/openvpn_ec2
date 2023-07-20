@@ -161,7 +161,7 @@ Resources:
           Value: "true"
     CreationPolicy:
       ResourceSignal:
-        Timeout: PT10M
+        Timeout: PT20M
 
   # Elastic IP Association
   IPAssoc:
