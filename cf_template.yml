@@ -18,8 +18,8 @@ Mappings:
     t3a.nano:
       Arch: HVM64
   AWSRegionArch2AMI:
-    eu-west-1:
-      HVM64: ami-04c58523038d79132
+    us-west-1:
+      HVM64: ami-05070c70d4ecc9f79
 
 # Resources
 Resources:
@@ -37,9 +37,9 @@ Resources:
     Properties:
       GroupDescription: Enable VPN access via UDP port 1194 and SSH access on port 22
       SecurityGroupIngress:
-        - ToPort: 1194
-          FromPort: 1194
-          IpProtocol: udp
+        - ToPort: 443
+          FromPort: 443
+          IpProtocol: tcp
           CidrIp: 0.0.0.0/0
         - ToPort: 22
           FromPort: 22
@@ -151,7 +151,7 @@ Resources:
           apt-get update
           apt-get install -y python3-pip awscli
           pip3 install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-py3-latest.tar.gz
-          git clone https://github.com/vtknightmare/openvpn_ec2/openvpn_ec2_cf_template.git /home/ubuntu/openvpn_ec2_cf
+          git clone https://github.com/vtknightmare/openvpn_ec2.git /home/ubuntu/openvpn_ec2_cf
           cd /home/ubuntu/openvpn_ec2_cf
           ./setup_ec2.sh ${S3Bucket} ${IPAddress}
           /usr/local/bin/cfn-signal --stack ${AWS::StackName} --resource EC2Instance --region ${AWS::Region}
