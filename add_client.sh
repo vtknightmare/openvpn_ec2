@@ -36,7 +36,7 @@ chown ubuntu "$CLIENT_CONFIG"
 cat <<EOF >> "$CLIENT_CONFIG"
 client
 dev tun
-proto udp
+proto tcp
 resolv-retry infinite
 nobind
 persist-key
@@ -48,7 +48,7 @@ key-direction 1
 redirect-gateway def1
 EOF
 
-echo "remote $IP 1194" >> "$CLIENT_CONFIG"
+echo "remote $IP 443" >> "$CLIENT_CONFIG"
 
 echo '<ca>' >> "$CLIENT_CONFIG"
 cat "${KEY_DIR}/ca.crt" >> "${CLIENT_CONFIG}"

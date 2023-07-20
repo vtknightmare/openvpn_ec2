@@ -131,8 +131,8 @@ setup_ca_apply() {
     sed -i 's/export KEY_CONFIG=/#export KEY_CONFIG=/' /etc/openvpn/easy-rsa/vars
     cat <<EOF >> /etc/openvpn/easy-rsa/vars
 export KEY_COUNTRY="US"
-export KEY_PROVINCE="MA"
-export KEY_CITY="Boston"
+export KEY_PROVINCE="CA"
+export KEY_CITY="Irvine"
 export KEY_ORG="PersonalVpnOrg"
 export KEY_EMAIL="nosuchemail@no.such.domain.com"
 export KEY_CN=PersonalVpn
